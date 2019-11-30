@@ -30,37 +30,37 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
     const foods = [
       {
-        name: '¢È“«¡—π‰°Ë',
+        name: '‡∏Ç‡πâ‡∏≤‡∏ß‡∏°‡∏±‡∏ô‡πÑ‡∏Å‡πà',
         type: 'meal',
         calories: 585,
         imageURL: 'https://food.mthai.com/app/uploads/2016/01/Hainanese-chicken-rice.jpg'
       },
       {
-        name: '√“‡¡ß',
+        name: '‡∏£‡∏≤‡πÄ‡∏°‡∏á',
         type: 'meal',
         calories: 640,
         imageURL: 'https://www.jgbthai.com/wp-content/uploads/2014/02/donchan_r01.jpg'
       },
       {
-        name: '´’´“√Ï ≈—¥',
+        name: '‡∏ã‡∏µ‡∏ã‡∏≤‡∏£‡πå‡∏™‡∏•‡∏±‡∏î',
         type: 'meal',
         calories: 240,
         imageURL: 'https://www.jessicagavin.com/wp-content/uploads/2019/07/caesar-salad-9-600x900.jpg'
       },
       {
-        name: '∫—«≈Õ¬‡º◊Õ°',
+        name: '‡∏ö‡∏±‡∏ß‡∏•‡∏≠‡∏¢‡πÄ‡∏ú‡∏∑‡∏≠‡∏Å',
         type: 'dessert',
         calories: 300,
         imageURL: 'https://f.ptcdn.info/444/052/000/ot2xb2poaH100GlUqqz-o.jpg'
       },
       {
-        name: '∫‘ß´Ÿ',
+        name: '‡∏ö‡∏¥‡∏á‡∏ã‡∏π',
         type: 'dessert',
         calories: 397,
         imageURL: 'https://www.cocobings.com/wp-content/uploads/2016/02/Strawberry-Milk-Bingsu.jpg'
       },
       {
-        name: '‚¥π—∑',
+        name: '‡πÇ‡∏î‡∏ô‡∏±‡∏ó',
         type: 'dessert',
         calories: 192,
         imageURL: 'http://www.dunkindonuts.co.th/public/upload/dessert/25b8980149dce5d104fccb671e95260f.jpg'
@@ -145,7 +145,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 "type": "button",
                 "action": {
                   "type": "uri",
-                  "label": "§ÈπÀ“√È“π§È“",
+                  "label": "‡∏Ñ‡πâ‡∏ô‡∏´‡∏≤‡∏£‡πâ‡∏≤‡∏ô‡∏Ñ‡πâ‡∏≤",
                   "uri": "https://www.wongnai.com/businesses?q=" + food.name
                 },
                 "height": "sm",
@@ -171,7 +171,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         stickerId: "52002751"
       };
       const payload = new Payload('LINE', payloadJson, {sendAsMessage: true});
-      agent.add('‰¡Ëæ∫√“¬°“√Õ“À“√µ—«§«“¡µÈÕß°“√');
+      agent.add('‡πÑ‡∏°‡πà‡∏û‡∏ö‡∏£‡∏≤‡∏¢‡∏Å‡∏≤‡∏£‡∏≠‡∏≤‡∏´‡∏≤‡∏£‡∏ï‡∏±‡∏ß‡∏Ñ‡∏ß‡∏≤‡∏°‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏≤‡∏£');
       agent.add(payload);
     }
 
