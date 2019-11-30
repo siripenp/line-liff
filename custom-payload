@@ -1,0 +1,56 @@
+{
+  "line": {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "hero": {
+      "type": "image",
+      "url": "https://i.imgur.com/2r9jm6u.png",
+      "size": "full",
+      "aspectRatio": "16:9",
+      "aspectMode": "cover"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "$foodType $cal ใช่มั้ย",
+          "align": "center"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "ใช่",
+                "text": "ใช่"
+              }
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "ไม่ใช่",
+                "text": "ไม่ใช่"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+}
