@@ -25,55 +25,59 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   function suggestFood(agent) {
     console.log('a');
     // This should come from parameters
-    let foodType = 'meal';
-    let calLimit = 500 + 0;
+    let foodType = agent.parameters.foodtype;
+    let calLimit = agent.parameters.cal + 0;
 
     const foods = [
       {
         name: 'ข้าวมันไก่',
-        type: 'meal',
+        type: 'คาว',
         calories: 585,
         imageURL: 'https://food.mthai.com/app/uploads/2016/01/Hainanese-chicken-rice.jpg'
       },
       {
         name: 'ราเมง',
-        type: 'meal',
+        type: 'คาว',
         calories: 640,
         imageURL: 'https://www.jgbthai.com/wp-content/uploads/2014/02/donchan_r01.jpg'
       },
       {
         name: 'ซีซาร์สลัด',
-        type: 'meal',
+        type: 'คาว',
         calories: 240,
         imageURL: 'https://www.jessicagavin.com/wp-content/uploads/2019/07/caesar-salad-9-600x900.jpg'
       },
       {
         name: 'บัวลอยเผือก',
-        type: 'dessert',
+        type: 'หวาน',
         calories: 300,
         imageURL: 'https://f.ptcdn.info/444/052/000/ot2xb2poaH100GlUqqz-o.jpg'
       },
       {
         name: 'บิงซู',
-        type: 'dessert',
+        type: 'หวาน',
         calories: 397,
         imageURL: 'https://www.cocobings.com/wp-content/uploads/2016/02/Strawberry-Milk-Bingsu.jpg'
       },
       {
         name: 'โดนัท',
-        type: 'dessert',
+        type: 'หวาน',
         calories: 192,
-        imageURL: 'http://www.dunkindonuts.co.th/public/upload/dessert/25b8980149dce5d104fccb671e95260f.jpg'
+        imageURL: 'https://christinascucina.com/wp-content/uploads/2014/01/IMG_4471-660.jpg'
       }
     ];
 
     console.log('b');
+    console.log(foodType);
+    console.log(calLimit);
     let filteredFoods = foods.filter(food => {
       return food.type == foodType && food.calories < calLimit;
     });
     console.log(filteredFoods);
     if (filteredFoods.length > 0) {
       const randomIndex = Math.floor(Math.random() * filteredFoods.length);
+      console.log('random' + randomIndex);
+      console.log('lenght' + filteredFoods.length);
       const food = filteredFoods[randomIndex];
       const payloadJson = {
         "type": "flex",
@@ -85,12 +89,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             "url": food.imageURL,
             "size": "full",
             "aspectRatio": "20:13",
-            "aspectMode": "cover",
-            "action": {
-              "type": "uri",
-              "label": "Line",
-              "uri": "https://linecorp.com/"
-            }
+            "aspectMode": "cover"
           },
           "body": {
             "type": "box",
@@ -181,6 +180,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   let intentMap = new Map();
   // intentMap.set('Default Welcome Intent', welcome);
   // intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('Food Recommendation', suggestFood);
+  intentMap.set('eat - custom - yes', suggestFood);
   agent.handleRequest(intentMap);
 });
